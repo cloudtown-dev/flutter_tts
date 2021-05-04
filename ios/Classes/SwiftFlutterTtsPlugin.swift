@@ -188,7 +188,7 @@ public class SwiftFlutterTtsPlugin: NSObject, FlutterPlugin, AVSpeechSynthesizer
           if output == nil {
             do {
               output = try AVAudioFile(
-              forWriting: fileURL,
+              forWriting: fileName,
               settings: pcmBuffer.format.settings, 
               commonFormat: .pcmFormatInt16,
               interleaved: false)
