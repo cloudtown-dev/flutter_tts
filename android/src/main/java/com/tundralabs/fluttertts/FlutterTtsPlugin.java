@@ -476,7 +476,7 @@ public class FlutterTtsPlugin implements MethodCallHandler, FlutterPlugin {
   }
 
   private void synthesizeToFile(String text, String fileName) {
-    File file = new File(context.getExternalFilesDir(null), fileName);
+    File file = new File(fileName);
     String uuid = UUID.randomUUID().toString();
     bundle.putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, SYNTHESIZE_TO_FILE_PREFIX + uuid);
 
