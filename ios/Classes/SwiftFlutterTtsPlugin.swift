@@ -182,13 +182,13 @@ public class SwiftFlutterTtsPlugin: NSObject, FlutterPlugin, AVSpeechSynthesizer
             // finished
         } else {
           // append buffer to file
-          let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(fileName)
+            let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(fileName)
           NSLog("Saving utterance to file: \(fileURL.absoluteString)")
             
           if output == nil {
             do {
               output = try AVAudioFile(
-              forWriting: fileName,
+                forWriting: URL(string: fileName),
               settings: pcmBuffer.format.settings, 
               commonFormat: .pcmFormatInt16,
               interleaved: false)
